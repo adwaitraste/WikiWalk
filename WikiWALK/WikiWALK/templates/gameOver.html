@@ -14,12 +14,6 @@
         body {
             height: 100%;
         }
-
-        .list-group {
-            max-height: 300px;
-            margin-bottom: 10px;
-            overflow-y: scroll;
-        }
     </style>
 
     <title>WikiWalk</title>
@@ -46,46 +40,10 @@
             </div>
         </nav>
 
-        <div class="container mt-5 pt-5">
-            <div class="row">
-                <div class="col-6 border rounded">
-                    <div class="current-article mb-5">
-                        <h1>
-                            Current Article
-                        </h1>
-                        <h4>
-                            <a target="_blank" href="http://en.wikipedia.org/wiki/{{ CurrentLink }}">
-                                {{ CurrentLink }}
-                            </a>
-                        </h4>
-                    </div>
-                    <div class="add-link mt-5">
-                        <h2>
-                            Add a potential link
-                        </h2>
-                        <input type="text" class="form-control my-3" placeholder="Your Link">
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title">
-                                Choose the next Article
-                            </h2>
-                            <input type="text" class="form-control my-3" placeholder="Search">
-                            <ul class="list-group">
-                                {%for var in Link%}
-                                <li class="list-group-item">
-                                    <a href="{% url 'forwards' next_link=var.LinkName %}">
-                                        {{ var.LinkName }}
-                                    </a>
-                                </li>
-                                {%endfor%}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="container">
+            <h1 class="text-center">
+                You won! Well Played
+            </h1>
         </div>
 
     </div>

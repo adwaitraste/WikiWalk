@@ -5,7 +5,7 @@ import pymysql
 
 
 def startGame(req):
-    global conn, cur
+    global conn, cur, startLink, endLink
     conn = pymysql.connect(host='4.tcp.ngrok.io',
                               user='root',
                               port=17891,
@@ -13,7 +13,10 @@ def startGame(req):
                               db='Links',
                               cursorclass=pymysql.cursors.DictCursor)
     cur = conn.cursor()
+
     startLink = 'Chess'
+    endLink = 'India'
+    
     res = createGameState(startLink)
     return render(req, "index.html", {"CurrentLink": startLink, "Link": res})
 
@@ -26,5 +29,7 @@ def createGameState(currentLink):
 
 
 def nextLink(req, next_link):
+    if next_link == endLink:
+        return render(req, "gameOver.html")
     res = createGameState(next_link)
     return render(req, "index.html", {"CurrentLink": next_link, "Link": res})
