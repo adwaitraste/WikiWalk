@@ -8,23 +8,23 @@
 
     <!-- Bootstrap CSS -->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'styling.css' %}" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'styling.css' %}" type="text/css">
     <title>WikiWalk</title>
 </head>
 
-<body class="bg-lala">
+<body>
     <div class="h-100">
-        <nav class="navbar navbar-expand-lg navbar-light bg-lala">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="#">WikiWalk</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,73 +39,81 @@
                 </ul>
             </div>
         </nav>
-        <div class="container-fluid bg-dark text-white">
-            <div class="row">
-                <div class="col-6 d-flex align-self-center that_booty">
-                    <div class="mx-auto">
-                        <div class="my-how-to-play">
-                            STARTING POINT
-                        </div>
-                        <h3 class="col-12 d-flex justify-content-center">{{ InitialLink }}</h3>
-                    </div>
-                </div>
-                <div class="col-6 d-flex align-self-center that_booty">
-                    <div class="mx-auto">
-                        <div class="my-how-to-play">
-                            ENDING POINT
-                        </div>
-                        <h3 class="col-12 d-flex justify-content-center">{{ EndLink }}</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container mt-5 pt-5">
-            <div class="row">
-                <div class="col-6 border rounded">
-                    <div class="current-article mb-5 text-white">
-                        <h1>
-                            Current Article
-                        </h1>
-                        <h4 id="current_link">
-                            <a target="_blank" href="http://en.wikipedia.org/wiki/{{ CurrentLink }}">
-                                {{ CurrentLink }}
-                            </a>
-                        </h4>
-                    </div>
-                    <div class="add-link mt-5 text-white">
-                        <h2>
-                            Add a potential link
-                        </h2>
-                        <form method="POST"> {% csrf_token %}
-                            <input type="text" class="form-control my-3" placeholder="Your Link" name='suggested_link'>
-                            <input type="submit" value="Submit" />
-                        </form>
-                        <!-- <button type="submit" form="link_suggestion" value="Submit">Submit</button> -->
-                    </div>
-                </div>
-                <div class="col-6 bg-lala">
-                    <div class="card bg-lala">
-                        <div class="card-body bg-lala">
-                            <h2 class="card-title text-white">
-                                Choose the next Article
-                            </h2>
-                            <input type="text" id="myInput" onkeyup="myFunction()" class="form-control my-3 bg-lala"
-                                placeholder="Search">
-                            <ul id="myUL" class="list-group bg-lala">
-                                {%for var in Link%}
-                                <li class="list-group-item">
-                                    <a href="{% url 'forwards' next_link=var.LinkName %}">
-                                        {{ var.LinkName }}
-                                    </a>
-                                </li>
-                                {%endfor%}
-                            </ul>
+        <div class = "container-fluid">
+            <div class="row w-100">
+                <div class = "col-8">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-6 d-flex align-self-center that_booty">
+                                <div class="mx-auto">
+                                    <div class="my-how-to-play">
+                                        STARTING POINT
+                                    </div>
+                                    <h3 class="col-12 d-flex justify-content-center point">{{ InitialLink }}</h3>
+                                </div>
+                            </div>
+                            <div class="col-6 d-flex align-self-center that_booty">
+                                <div class="mx-auto">
+                                    <div class="my-how-to-play">
+                                        ENDING POINT
+                                    </div>
+                                    <h3 class="col-12 d-flex justify-content-center point">{{ EndLink }}</h3>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div class="container mt-5 pt-5">
+                        <div class="row">
+                            <div class="col-6 border rounded">
+                                <div class="current-article mb-5 text-center pt-5">
+                                    <h1>
+                                        Current Article
+                                    </h1>
+                                    <h4 id="current_link">
+                                        <a target="_blank" href="http://en.wikipedia.org/wiki/{{ CurrentLink }}">
+                                            {{ CurrentLink }}
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div class="add-link mt-5">
+                                    <h2>
+                                        Add a potential link
+                                    </h2>
+                                    <form method="POST"> {% csrf_token %}
+                                        <input type="text" class="form-control my-3" placeholder="Your Link" name='suggested_link'>
+                                        <input type="submit" value="Submit" />
+                                    </form>
+                                    <!-- <button type="submit" form="link_suggestion" value="Submit">Submit</button> -->
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h2 class="card-title text-center">
+                                            Choose the next Article
+                                        </h2>
+                                        <input type="text" id="myInput" onkeyup="myFunction()" class="form-control my-3"
+                                            placeholder="Search">
+                                        <ul id="myUL" class="list-group" style = "max-height: 50vh; overflow-y: scroll;">
+                                            {%for var in Link%}
+                                            <li class="list-group-item">
+                                                <a href="{% url 'forwards' next_link=var.LinkName %}">
+                                                    {{ var.LinkName }}
+                                                </a>
+                                            </li>
+                                            {%endfor%}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+                <div class = "col-4 bg-dark" id = "wikidiv">
 
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

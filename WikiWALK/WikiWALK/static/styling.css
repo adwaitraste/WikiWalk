@@ -1,25 +1,20 @@
 .my-how-to-play
 {
-    font-size: 80px;
+    font-size: 3rem;
     font-family: 'Chau Philomene One', sans-serif;
-    
+
 }
 
 .bg-pink
 {
-    background-color: #ff1744; 
-}
-
-.nav-link
-{
-    color: white !important;
+    background-color: #ff1744;
 }
 
 .navbar-brand
 {
-    color:#fff !important;
-    font-size: 40px;
+    font-size: 2.5rem;
     font-family:'Jua', sans-serif;
+    padding-left: 2rem;
 }
 
 .my-explanation
@@ -31,7 +26,6 @@
 .booty
 {
     /* background-image: url("https://www.teahub.io/photos/full/267-2675255_bright-colors-wallpaper-colorful-desktop-background-background-bright.jpg"); */
-    background-color: black;
     background-size: cover;
     height: 100%;
 }
@@ -44,14 +38,8 @@ html, body {
 .that_booty
 {
     /* background-image: url("https://i.redd.it/2obw9yylddr51.jpg"); */
-    background-color: black;
     background-size: contain;
     height: 100%;
-}
-
-.bg-lala
-{
-    background-color:black;
 }
 
 .nav-item
@@ -80,4 +68,8 @@ li
 
 .game-desc {
     background-color: black;
+}
+
+.point {
+    font-size: 1.2rem;
 }
