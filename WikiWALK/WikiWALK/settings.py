@@ -81,8 +81,8 @@ DATABASES = {
         'NAME': 'Links',
         'USER': 'root',
         'PASSWORD': 'aad',
-        'HOST': '0.tcp.ngrok.io',
-        'PORT': '10361',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
