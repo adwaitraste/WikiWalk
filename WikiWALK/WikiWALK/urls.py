@@ -19,6 +19,7 @@ from . import view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('Game', view.newGame, name='Game'),
     path('', view.startGame),
     # path('India', view.nextLink, name='India')
     re_path(r'^forwards/(?P<next_link>.+?)/$', view.nextLink, name='forwards')

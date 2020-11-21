@@ -7,21 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styling.css' %}" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style>
-        html,
-        body {
-            height: 100%;
-        }
-    </style>
-
     <title>WikiWalk</title>
 </head>
 
-<body>
+<body class="bg-lala">
     <div class="h-100">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-lala">
             <a class="navbar-brand" href="#">WikiWalk</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,20 +34,23 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">LeaderBoard</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#">About Us</a>
                     </li>
                 </ul>
             </div>
         </nav>
 
-        <div class="container">
-            <h1 class="text-center">
-                You won! Well Played
-            </h1>
+        <div class="container-fluid bg-dark text-white">
+        <div class="row">
+            <div class="col d-flex align-self-center that_booty">
+                <div class="mx-auto">
+                    <div class="my-how-to-play">
+                        YOU WON, WELL PLAYED!
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
     </div>
     <!-- Optional JavaScript -->

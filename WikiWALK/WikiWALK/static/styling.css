@@ -1,0 +1,83 @@
+.my-how-to-play
+{
+    font-size: 80px;
+    font-family: 'Chau Philomene One', sans-serif;
+    
+}
+
+.bg-pink
+{
+    background-color: #ff1744; 
+}
+
+.nav-link
+{
+    color: white !important;
+}
+
+.navbar-brand
+{
+    color:#fff !important;
+    font-size: 40px;
+    font-family:'Jua', sans-serif;
+}
+
+.my-explanation
+{
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.booty
+{
+    /* background-image: url("https://www.teahub.io/photos/full/267-2675255_bright-colors-wallpaper-colorful-desktop-background-background-bright.jpg"); */
+    background-color: black;
+    background-size: cover;
+    height: 100%;
+}
+
+html, body {
+    height: 100%;
+    margin: 0px;
+}
+
+.that_booty
+{
+    /* background-image: url("https://i.redd.it/2obw9yylddr51.jpg"); */
+    background-color: black;
+    background-size: contain;
+    height: 100%;
+}
+
+.bg-lala
+{
+    background-color:black;
+}
+
+.nav-item
+{
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ordered
+{
+    background-color:#242222;
+    border-radius: 50px;
+    box-shadow: 5px 10px black;
+}
+
+ul
+{
+    list-style-type:"\25BA";
+}
+
+li
+{
+    padding-left: 20px;
+}
+
+.game-desc {
+    background-color: black;
+}
