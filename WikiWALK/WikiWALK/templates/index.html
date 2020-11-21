@@ -84,6 +84,11 @@
                                     <a href="{% url 'forwards' next_link=var.LinkName %}">
                                         {{ var.LinkName }}
                                     </a>
+                                    <form method="POST"> {% csrf_token %}
+                                        <!-- <input type="text" class="form-control my-3" placeholder="Your Link" name='suggested_link'> -->
+                                        <input type="hidden" name="embed_link" value="{{ var.LinkName }}">
+                                        <input type="submit" value="Peek" />
+                                    </form>
                                 </li>
                                 {%endfor%}
                             </ul>
@@ -92,6 +97,12 @@
                 </div>
             </div>
         </div>
+
+        <div> 
+            http://en.wikipedia.org/wiki/{{ peakLink }}
+            <object type="text/html" data="http://en.wikipedia.org/wiki/{{ PeakLink }}" width="800px" height="600px" style="overflow:auto;border:5px ridge blue">
+            </object>
+         </div>
 
     </div>
     <!-- Optional JavaScript -->

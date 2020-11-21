@@ -38,13 +38,20 @@ def createGameState(currentLink):
 
 
 def nextLink(req, next_link):
+
+    peak_link = next_link
+
     if req.POST.get('suggested_link'):
         print(req.POST.get('suggested_link'))
         print(next_link)
         query = """INSERT INTO Suggestions (from_link, to_link) VALUES("%s", "%s")"""%(next_link, req.POST.get('suggested_link'))
         cur_meta.execute(query)
         conn_meta.commit()
+    
+    if req.POST.get('embed_link'):
+        print(req.POST.get('embed_link'))
+        peak_link = req.POST.get('embed_link')
     if next_link == endLink:
         return render(req, "gameOver.html")
     res = createGameState(next_link)
-    return render(req, "index.html", {"CurrentLink": next_link, "Link": res})
+    return render(req, "index.html", {"CurrentLink": next_link, "Link": res, "peakLink": peak_link})
