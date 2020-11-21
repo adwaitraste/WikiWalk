@@ -81,7 +81,7 @@
                                     </h2>
                                     <form method="POST"> {% csrf_token %}
                                         <input type="text" class="form-control my-3" placeholder="Your Link" name='suggested_link'>
-                                        <button type="submti" class = "btn btn-primary btn-block">SUBMIT</button>
+                                        <button type="submit" class = "btn btn-primary btn-block">SUBMIT</button>
                                     </form>
                                     <!-- <button type="submit" form="link_suggestion" value="Submit">Submit</button> -->
                                 </div>
@@ -99,6 +99,10 @@
                                             <li class="list-group-item">
                                                 <a href="{% url 'forwards' next_link=var.LinkName %}">
                                                     {{ var.LinkName }}
+                                                    <form method="POST" style="display: inline;"> {% csrf_token %}
+                                                        <input type="hidden" name='embed_link' value="{{var.LinkName}}">
+                                                        <button type="submit" class="btn">PEAK</button>
+                                                    </form>
                                                 </a>
                                             </li>
                                             {%endfor%}
@@ -109,8 +113,9 @@
                         </div>
                     </div>
                 </div>
-                <div class = "col-4 bg-dark" id = "wikidiv">
-
+                <div class = "col-4" id = "wikidiv">
+                    <object id="wikiobj" type="text/html" data="http://en.wikipedia.org/wiki/{{ PeakLink }}" style="overflow:auto;border:5px ridge black">
+                    </object>
                 </div>
             </div>
         </div>
@@ -126,6 +131,8 @@
         crossorigin="anonymous"></script>
 
     <script>
+         $('#wikiobj').width($('#wikidiv').width());
+         $('#wikiobj').height($('#wikidiv').height());
         function myFunction() {
             // Declare variables
             var input, filter, ul, li, a, i, txtValue;
