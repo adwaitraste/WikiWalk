@@ -1,42 +1,43 @@
 from django.shortcuts import render
-
+from WikiWALK.config import hostname, port
 from WikiWALK.models import Link
 import pymysql
 import pickle
 import random
 def startGame(req):
-    global conn, cur, conn_meta, cur_meta
-    conn_meta = pymysql.connect(host='localhost',
+    global conn, cur, conn_meta, cur_meta, b, links
+    conn_meta = pymysql.connect(host=hostname,
                               user='root',
-                              port=3306,
+                              port=port,
                               password='aad',
                               db='Data',
                               cursorclass=pymysql.cursors.DictCursor)
     cur_meta = conn_meta.cursor()
-    conn = pymysql.connect(host='0.tcp.ngrok.io',
+    conn = pymysql.connect(host=hostname,
                               user='root',
-                              port=10361,
+                              port=port,
                               password='aad',
                               db='Links',
                               cursorclass=pymysql.cursors.DictCursor)
     cur = conn.cursor()
+    with open("table_names.pickle", 'rb') as handle:
+        b = pickle.load(handle)
+    links = list(b.keys())
     # res = createGameState(startLink)
     return render(req, "play.html", {})
 
 def newGame(req):
     global startLink, endLink
-    with open("table_names.pickle", 'rb') as handle:
-        b = pickle.load(handle)
-    links = list(b.keys())
-    startnumber = random.randint(0, 200)
-    endnumber = random.randint(0, 200)
+    
+    startnumber = random.randint(0, len(links)-1)
+    endnumber = random.randint(0, len(links)-1)
     tslink = links[startnumber]
     telink = links[endnumber]
     print(tslink)
     print(type(links))
     print(telink)
-    startLink = 'Chess' #Replace with links[startnumber]
-    endLink = 'India'  #Replace with links[endnumnber]
+    startLink = tslink #Replace with links[startnumber]
+    endLink = telink  #Replace with links[endnumnber]
     # res = createGameState(startLink)
     # return render(req, "index.html", {"InitialLink": startLink, "Link": res, "EndLink": endLink, "CurrentLink": startLink})
 
@@ -62,4 +63,12 @@ def nextLink(req, next_link):
     if next_link == endLink:
         return render(req, "gameOver.html")
     res = createGameState(next_link)
+    res_temp = []
+    for c in res:
+        print(c)
+        # break
+        if c["LinkName"] in links:
+            res_temp.append(c)
+    res = res_temp
+    # print(res)
     return render(req, "index.html", {"CurrentLink": next_link, "Link": res, "InitialLink": startLink, "EndLink": endLink})

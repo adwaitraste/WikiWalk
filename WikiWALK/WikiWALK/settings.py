@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+from WikiWALK.config import hostname, port
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -81,8 +82,8 @@ DATABASES = {
         'NAME': 'Links',
         'USER': 'root',
         'PASSWORD': 'aad',
-        'HOST': '0.tcp.ngrok.io',
-        'PORT': '10361',
+        'HOST': hostname,
+        'PORT': port,
     }
 }
 
