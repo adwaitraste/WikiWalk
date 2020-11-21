@@ -39,7 +39,7 @@ def createGameState(currentLink):
 
 def nextLink(req, next_link):
 
-    peak_link = next_link
+    peak_link = next_link.replace(" ", "_")
 
     if req.POST.get('suggested_link'):
         print(req.POST.get('suggested_link'))
@@ -50,7 +50,7 @@ def nextLink(req, next_link):
     
     if req.POST.get('embed_link'):
         print(req.POST.get('embed_link'))
-        peak_link = req.POST.get('embed_link')
+        peak_link = req.POST.get('embed_link').replace(" ", "_")
     if next_link == endLink:
         return render(req, "gameOver.html")
     res = createGameState(next_link)
