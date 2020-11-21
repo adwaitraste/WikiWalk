@@ -6,9 +6,9 @@ import pymysql
 
 def startGame(req):
     global conn, cur, startLink, endLink
-    conn = pymysql.connect(host='4.tcp.ngrok.io',
+    conn = pymysql.connect(host='0.tcp.ngrok.io',
                               user='root',
-                              port=17891,
+                              port=10361,
                               password='aad',
                               db='Links',
                               cursorclass=pymysql.cursors.DictCursor)
