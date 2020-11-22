@@ -27,7 +27,7 @@ def startGame(req):
     return render(req, "home.html", {})
 
 def newGame(req):
-    global startLink, endLink
+    global startLink, endLink, lastLink
     
     startnumber = random.randint(0, len(links)-1)
     endnumber = random.randint(0, len(links)-1)
@@ -40,6 +40,7 @@ def newGame(req):
     endLink = telink  #Replace with links[endnumnber]
     startLink = "Chess" #Replace with links[startnumber]
     endLink = "Chess problems"  #Replace with links[endnumnber]
+    lastLink = startLink
     # res = createGameState(startLink)
     # return render(req, "index.html", {"InitialLink": startLink, "Link": res, "EndLink": endLink, "CurrentLink": startLink})
 
@@ -56,6 +57,10 @@ def createGameState(currentLink):
 
 
 def nextLink(req, next_link):
+    if lastLink != next_link:
+        query = """INSERT INTO Paths (from_link, int_link, to_link) VALUES("%s", "%s", "%s")"""%(lastLink, next_link, endLink)
+        lastLink = next_link
+        
     peak_link = next_link
     if req.POST.get('suggested_link'):
         print(req.POST.get('suggested_link'))
