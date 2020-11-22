@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from WikiWALK.config import hostname, port
-from WikiWALK.models import Link, metaRow
+from WikiWALK.models import Link
 import pymysql
 import pickle
 import random

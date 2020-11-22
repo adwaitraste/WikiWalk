@@ -66,9 +66,11 @@
             <tbody class="text-center">
                 {% for row in data %}
                 <tr>
-                    <th>{{ row[0] }}</th>
-                    <th>{{ row[1] }}</th>
-                    <th>{{ row[2] }}</th>
+                    {% for heading in row%}
+                    <td>{{ heading }}</td>
+                    {% comment %} <th>{{ row[1]|safe }}</th> {% endcomment %}
+                    {% comment %} <th>{{ row[2]|safe }}</th> {% endcomment %}
+                    {% endfor %}
                 </tr>
                 {% endfor %}
             </tbody>
