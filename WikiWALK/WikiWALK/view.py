@@ -93,3 +93,6 @@ def aboutus_page(req):
 
 def play_page(req):
     return render(req, "play.html")
+
+def open_source_db(req):
+    return render(req, "openSourceDB.html")
