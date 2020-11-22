@@ -64,8 +64,13 @@
                 </tr>
             </thead>
             <tbody class="text-center">
+                {% for row in data %}
                 <tr>
+                    <th>{{ row[0] }}</th>
+                    <th>{{ row[1] }}</th>
+                    <th>{{ row[2] }}</th>
                 </tr>
+                {% endfor %}
             </tbody>
         </table>
         <div>

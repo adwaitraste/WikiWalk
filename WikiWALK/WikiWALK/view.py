@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from WikiWALK.config import hostname, port
-from WikiWALK.models import Link
+from WikiWALK.models import Link, metaRow
 import pymysql
 import pickle
 import random
@@ -101,4 +101,4 @@ def open_source_db(req):
     data = []
     for row in res:
         data.append([row["from_link"], row["int_link"], row["to_link"]])
-    return render(req, "openSourceDB.html")
+    return render(req, "openSourceDB.html", {"data": data})

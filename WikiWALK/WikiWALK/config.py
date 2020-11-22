@@ -1,2 +1,2 @@
-hostname = 'localhost'
-port = 3306
+hostname = '0.tcp.ngrok.io'
+port = 10998
