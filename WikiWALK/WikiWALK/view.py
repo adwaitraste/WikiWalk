@@ -66,9 +66,14 @@ def createGameState(currentLink):
 
 
 def nextLink(req, next_link):
-    if lastLink != next_link:
-        query = """INSERT INTO Paths (from_link, int_link, to_link) VALUES("%s", "%s", "%s")"""%(lastLink, next_link, endLink)
-        lastLink = next_link
+    import WikiWALK.config
+    if WikiWALK.config.lastLink == None:
+        WikiWALK.config.lastLink = startLink
+    if WikiWALK.config.lastLink != next_link:
+        query = """INSERT INTO Paths (from_link, int_link, to_link) VALUES("%s", "%s", "%s")"""%(WikiWALK.config.lastLink, next_link, endLink)
+        cur_meta.execute(query)
+        conn_meta.commit()
+        WikiWALK.config.lastLink = next_link
         
     peak_link = next_link
     if req.POST.get('suggested_link'):
@@ -83,6 +88,7 @@ def nextLink(req, next_link):
         # return render(req, "index.html", {"CurrentLink": next_link, "Link": res, "InitialLink": startLink, "EndLink": endLink, "PeakLink": peak_link})
 
     if next_link == endLink:
+        WikiWALK.config.lastLink = None
         return render(req, "gameOver.html")
     res = createGameState(next_link)
     res_temp = []
@@ -115,4 +121,5 @@ def open_source_db(req):
     data = []
     for row in res:
         data.append([row["from_link"], row["int_link"], row["to_link"]])
+    data.reverse()
     return render(req, "openSourceDB.html", {"data": data})
