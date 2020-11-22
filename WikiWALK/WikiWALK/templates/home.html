@@ -4,8 +4,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="css/styling.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styling.css' %}" type="text/css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -20,7 +21,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-lala sticky-top bg-dark">
-        <a class="navbar-brand text-white" href="./index.html">WikiWalk</a>
+        <a class="navbar-brand text-white" href="{% url 'Home' %}">WikiWalk</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,12 +37,12 @@
     <div class="container">
         <div class="row pt-5 align-middle">
             <div class="col-4 pt-5">
-                <img class="w-75 d-block mx-auto" src="img/1200px-Wikipedia-logo-v2.svg.png" alt="">
-                <img class="w-50 d-block mx-auto pt-5" src="img/Screenshot from 2020-11-17 00-15-51.png" alt="">
+                <img class="w-75 d-block mx-auto" src="{% static 'img/1200px-Wikipedia-logo-v2.svg.png' %}" alt="">
+                <img class="w-50 d-block mx-auto pt-5" src="{% static 'img/Screenshot from 2020-11-17 00-15-51.png' %}" alt="">
             </div>
             <div class="col-8 d-flex align-self-center">
                 <div class="w-50 mx-auto pt-5">
-                    <a href="index.html" style="text-decoration: none;"><button type="button" class="btn btn-dark btn-lg btn-block py-3">Play</button></a>
+                    <a href="{% url 'Game' %}" style="text-decoration: none;"><button type="button" class="btn btn-dark btn-lg btn-block py-3">Play</button></a>
                     <div class="py-3"></div>
                     <a href="play.html" style="text-decoration: none;"><button type="button" class="btn btn-dark btn-lg btn-block py-3">How To Play?</button></a>
                 </div>

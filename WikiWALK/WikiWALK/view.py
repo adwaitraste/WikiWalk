@@ -24,7 +24,7 @@ def startGame(req):
         b = pickle.load(handle)
     links = list(b.keys())
     # res = createGameState(startLink)
-    return render(req, "play.html", {})
+    return render(req, "home.html", {})
 
 def newGame(req):
     global startLink, endLink
