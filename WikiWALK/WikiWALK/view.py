@@ -75,8 +75,14 @@ def nextLink(req, next_link):
     for c in res:
         # print(c)
         # break
+        tmp = c["LinkName"][0]
+        tmp = tmp.capitalize()
+        tmp2 = c["LinkName"]
+        tmp2=tmp+tmp2[1:]
+        c["LinkName"] = tmp2 
         if c["LinkName"] in links:
             res_temp.append(c)
+
     res = res_temp
 
     # print(res)
