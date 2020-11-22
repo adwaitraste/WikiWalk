@@ -76,16 +76,17 @@ WSGI_APPLICATION = 'WikiWALK.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'Links',
-    #     'USER': 'root',
-    #     'PASSWORD': 'aad',
-    #     'HOST': hostname,
-    #     'PORT': port,
-    # }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'Links',
+#         'USER': 'root',
+#         'PASSWORD': 'aad',
+#         'HOST': hostname,
+#         'PORT': port,
+#     }
+# }
+
 
 
 # Password validation

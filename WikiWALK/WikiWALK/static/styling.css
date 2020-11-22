@@ -4,6 +4,12 @@
     font-family: 'Chau Philomene One', sans-serif;
 
 }
+.gameover {
+    padding-top: 18rem;
+    color: black;
+    font-size: 5rem;
+    font-family: 'Baloo Thambi 2', cursive;
+}
 .nav-link{
     font-family: 'Montserrat';
 }
