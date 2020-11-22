@@ -107,3 +107,12 @@ def aboutus_page(req):
 
 def play_page(req):
     return render(req, "play.html")
+
+def open_source_db(req):
+    query = "SELECT * from Paths"
+    cur_meta.execute(query)
+    res = cur_meta.fetchall()
+    data = []
+    for row in res:
+        data.append([row["from_link"], row["int_link"], row["to_link"]])
+    return render(req, "openSourceDB.html", {"data": data})

@@ -1,6 +1,6 @@
 .my-how-to-play
 {
-    font-size: 80px;
+    font-size: 5rem;
     font-family: 'Chau Philomene One', sans-serif;
 
 }
@@ -82,4 +82,8 @@ li
 
 .point {
     font-size: 1.2rem;
+}
+
+table {
+    font-size: 2rem;
 }

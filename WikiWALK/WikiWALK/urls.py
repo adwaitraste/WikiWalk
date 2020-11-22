@@ -23,6 +23,7 @@ urlpatterns = [
     path('', view.startGame, name='Home'),
     path('aboutUs',view.aboutus_page, name='About'),
     path('howtoplay',view.play_page, name='Play'),
+    path('openSourceDB',view.open_source_db, name='OpenSourceDB'),
     # path('India', view.nextLink, name='India')
     re_path(r'^forwards/(?P<next_link>.+?)/$', view.nextLink, name='forwards')
 ]
