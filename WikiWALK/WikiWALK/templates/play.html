@@ -17,11 +17,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 
-    <title>HowToPlay</title>
+    <title>How to Play</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-lala">
-        <a class="navbar-brand" href="./index.html">WikiWalk</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-lala sticky-top">
+        <a class="navbar-brand text-white" href="{% url 'Home' %}">WikiWalk</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,10 +29,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="aboutUs.html">About Us</a>
+                    <a class="nav-link text-white" href="{% url 'About' %}">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="play.html">How to Play</a>
+                    <a class="nav-link text-white" href="{% url 'Play' %}">How to Play</a>
                 </li>
             </ul>
         </div>
@@ -50,16 +50,18 @@
         </div>
     </div>
 
-    <div class="container-fluid text-white booty" style = "padding-top: 3rem;">
+    <div class="container-fluid text-white" style = "padding-top: 3rem;">
         <div class="row">
             <div class="offset-1 col-10 ordered">
                 <div class="mx-auto">
                     <div class="my-explanation py-1">
                         <ul>
-                            <li style = padding-top:30px>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque repudiandae numquam cupiditate reprehenderit alias assumenda aliquam pariatur minus minima exercitationem?</li>
-                            <li style = padding-top:20px>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam est eius accusamus, rem odit libero vitae corporis cum expedita quia?</li>
-                            <li style = padding-top:20px>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit suscipit quibusdam omnis, possimus asperiores labore vel reiciendis provident consectetur quas.</li>
-                            <li style = padding-top:20px>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit suscipit quibusdam omnis, possimus asperiores labore vel reiciendis provident consectetur quas.</li>
+                            <li style = padding-top:30px>After clicking on the play button, you will be directed to the game page which depicts a starting point and ending point from one article to another.</li>
+                            <li style = padding-top:30px>The primary goal is to traverse from one article to another in the shortest possible path.</li>
+                            <li style = padding-top:30px>After choosing an article from the list provided, that article becomes the current article and newly linked articles are provided in the list.</li>
+                            <li style = padding-top:30px>To aid the user, a peek option is provided which reveals the Wikipedia article for any option in the list.</li>
+                            <li style = padding-top:30px>The user can continue to select articles until they are notified that they have reached the end point.</li>
+							<li style = padding-top:30px>We Hope You Enjoy!</li>
                           </ul>
                     </div>
                 </div>

@@ -14,18 +14,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>WikiWalk</title>
 </head>
 
-<body class="bg-lala">
+<body>
     <div class="h-100">
         <nav class="navbar navbar-expand-lg navbar-light bg-lala">
-            <a class="navbar-brand" href="#">WikiWalk</a>
+            <a class="navbar-brand text-white" href="{% url 'Home' %}" style = "font-size: 3rem;">WikiWalk</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -34,23 +35,25 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link text-white" href="{% url 'About' %}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'Play' %}">How to Play</a>
                     </li>
                 </ul>
             </div>
         </nav>
 
-        <div class="container-fluid bg-dark text-white">
-        <div class="row">
-            <div class="col d-flex align-self-center that_booty">
-                <div class="mx-auto">
-                    <div class="my-how-to-play">
-                        YOU WON, WELL PLAYED!
-                    </div>
+        <div class = "container-fluid text-center">
+                <div class = "align-self-center gameover">
+                    TASK COMPLETED!
                 </div>
-            </div>
+                <a href="{% url 'Game' %}" style="text-decoration: none;">
+                    <button class ="btn bg-pink text-white" style="font-size: 2rem;font-family: 'Baloo Thambi 2', cursive;">
+                        PLAY AGAIN
+                    </button>
+                </a>
         </div>
-    </div>
 
     </div>
     <!-- Optional JavaScript -->
