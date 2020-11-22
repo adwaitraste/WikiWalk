@@ -87,3 +87,9 @@ def nextLink(req, next_link):
 
     # print(res)
     return render(req, "index.html", {"CurrentLink": next_link, "Link": res, "InitialLink": startLink, "EndLink": endLink, "PeakLink": peak_link})
+
+def aboutus_page(req):
+    return render(req, "aboutUs.html")
+
+def play_page(req):
+    return render(req, "play.html")

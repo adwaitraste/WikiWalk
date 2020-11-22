@@ -20,15 +20,15 @@
     <title>WikiWalk</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-lala sticky-top bg-dark">
-        <a class="navbar-brand text-white" href="{% url 'Home' %}">WikiWalk</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-lala sticky-top">
+        <a class="navbar-brand text-white" href="{% url 'Home' %}" style = "font-size: 2.5rem;">WikiWalk</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="./aboutUs.html">About Us</a>
+                    <a class="nav-link text-white" href="{% url 'About' %}">About Us</a>
                 </li>
             </ul>
         </div>
@@ -42,9 +42,9 @@
             </div>
             <div class="col-8 d-flex align-self-center">
                 <div class="w-50 mx-auto pt-5">
-                    <a href="{% url 'Game' %}" style="text-decoration: none;"><button type="button" class="btn btn-dark btn-lg btn-block py-3">Play</button></a>
+                    <a href="{% url 'Game' %}" style="text-decoration: none;"><button type="button" class="btn bg-lala btn-lg btn-block py-3 text-white">Play</button></a>
                     <div class="py-3"></div>
-                    <a href="play.html" style="text-decoration: none;"><button type="button" class="btn btn-dark btn-lg btn-block py-3">How To Play?</button></a>
+                    <a href="{% url 'Play' %}" style="text-decoration: none;"><button type="button" class="btn bg-lala btn-lg btn-block py-3 text-white">How To Play?</button></a>
                 </div>
             </div>
         </div>

@@ -21,6 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('Game', view.newGame, name='Game'),
     path('', view.startGame, name='Home'),
+    path('aboutUs',view.aboutus_page, name='About'),
+    path('howtoplay',view.play_page, name='Play'),
     # path('India', view.nextLink, name='India')
     re_path(r'^forwards/(?P<next_link>.+?)/$', view.nextLink, name='forwards')
 ]
