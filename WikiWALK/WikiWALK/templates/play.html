@@ -17,13 +17,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 
-    <title>HowToPlay</title>
+    <title>How to Play</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-lala">
+    <nav class="navbar navbar-expand-lg navbar-light bg-lala sticky-top">
         <a class="navbar-brand text-white" href="{% url 'Home' %}">WikiWalk</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -39,7 +38,7 @@
         </div>
     </nav>
 
-    <div class="container bg-dark text-white mt-5 py-2 rounded">
+    <div class="container-fluid bg-dark text-white">
         <div class="row">
             <div class="col d-flex align-self-center that_booty">
                 <div class="mx-auto">
@@ -51,52 +50,31 @@
         </div>
     </div>
 
-    <div class="container pt-2">
+    <div class="container-fluid text-white" style = "padding-top: 3rem;">
         <div class="row">
-            <div class="offset-1 col-10">
+            <div class="offset-1 col-10 ordered">
                 <div class="mx-auto">
-
-                    <ul class=" pt-2 list-group list-group-flush text-center">
-                        <li class="list-group-item">
-                            After clicking on the play button, you will be directed to the
-                            game page which depicts a starting point and ending point from one article to another.
-                        </li>
-                        <li class="list-group-item">
-                            The primary goal is to traverse from one article to another in the shortest possible path.
-                        </li>
-                        <li class="list-group-item">
-                            After choosing an article from the list provided, that article becomes the current article
-                            and newly linked articles are provided in the list.
-                        </li>
-                        <li class="list-group-item">
-                            To aid the user, a peek option is provided which reveals the Wikipedia article for any
-                            option in the list.
-                        </li>
-                        <li class="list-group-item">
-                            The user can continue to select articles until they are notified that they have reached the
-                            end point.
-                        </li>
-                        <li class="list-group-item">
-                            We Hope You Enjoy!!
-                        </li>
-                    </ul>
+                    <div class="my-explanation py-1">
+                        <ul>
+                            <li style = padding-top:30px>After clicking on the play button, you will be directed to the game page which depicts a starting point and ending point from one article to another.</li>
+                            <li style = padding-top:30px>The primary goal is to traverse from one article to another in the shortest possible path.</li>
+                            <li style = padding-top:30px>After choosing an article from the list provided, that article becomes the current article and newly linked articles are provided in the list.</li>
+                            <li style = padding-top:30px>To aid the user, a peek option is provided which reveals the Wikipedia article for any option in the list.</li>
+                            <li style = padding-top:30px>The user can continue to select articles until they are notified that they have reached the end point.</li>
+							<li style = padding-top:30px>We Hope You Enjoy!</li>
+                          </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        <div>
+    <div>
 
-            <!-- Optional JavaScript -->
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-                crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-                crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-                crossorigin="anonymous"></script>
-</body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
 </html>    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
